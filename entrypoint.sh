@@ -70,7 +70,7 @@ retval=1
 if [[ -e pyproject.toml ]]; then
     echo "Found a pyproject.toml file"
     grep "build-backend" pyproject.toml
-    retval=$?
+    ##retval=$?
 fi
 echo "About to test retval..."
 if [[ $retval -eq 0 ]]; then
