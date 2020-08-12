@@ -66,6 +66,7 @@ $PIP install twine semver pep517
 $PYTHON /validate_version.py $REF
 
 set -o xtrace
+set -o pipefail
 printf "Prepare for publication...\n\n"
 $GIT clean -fxd
 retval=1
