@@ -45,6 +45,8 @@ GCC=$(which gcc)
 echo "GCC=${GCC}"
 GIT=$(which git)
 echo "GIT=${GIT}"
+GREP=$(which grep)
+echo "GREP=${GREP}"
 
 /usr/bin/python3 --version
 /usr/bin/gcc --version
@@ -69,7 +71,7 @@ $GIT clean -fxd
 retval=1
 if [[ -e pyproject.toml ]]; then
     echo "Found a pyproject.toml file"
-    ##grep "build-backend" pyproject.toml
+    $GREP "build-backend" pyproject.toml
     retval=$?
 fi
 echo "About to test retval..."
