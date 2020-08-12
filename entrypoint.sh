@@ -71,6 +71,8 @@ if [[ -e pyproject.toml ]]; then
     grep "build-backend" pyproject.toml
     retval=$?
 fi
+echo "About to test retval..."
+set -o xtrace
 if [[ $retval -eq 0 ]]; then
     echo -e "\n\nDetected a PEP517-compatible project..."
     $PYTHON -m pep517.build --source .
