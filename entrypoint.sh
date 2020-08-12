@@ -1,6 +1,6 @@
 #!/bin/bash -l
 
-set -e
+#set -e
 
 # Publish to the PyPI testing instance URL if the env var 
 # PYPI_TEST is set to a non-empty value, otherwise publish
@@ -72,10 +72,7 @@ $GIT clean -fxd
 retval=1
 if [[ -e pyproject.toml ]]; then
     echo "Found a pyproject.toml file"
-    ls -al
-    #$GREP 'build-backend' ./pyproject.toml
     /bin/grep 'build-backend' ./pyproject.toml
-    /bin/grep NOTHING ./pyproject.toml
     retval=$?
 fi
 echo "About to test retval..."
