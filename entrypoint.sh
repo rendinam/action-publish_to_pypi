@@ -71,7 +71,7 @@ $GIT clean -fxd
 retval=1
 if [[ -e pyproject.toml ]]; then
     echo "Found a pyproject.toml file"
-    $GREP "build-backend" pyproject.toml
+    #$GREP "build-backend" ./pyproject.toml
     retval=$?
 fi
 echo "About to test retval..."
