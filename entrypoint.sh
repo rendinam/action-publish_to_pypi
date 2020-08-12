@@ -63,6 +63,7 @@ $PIP install twine semver pep517
 # Validate the version
 $PYTHON /validate_version.py $REF
 
+set -o xtrace
 printf "Prepare for publication...\n\n"
 $GIT clean -fxd
 retval=1
@@ -72,7 +73,6 @@ if [[ -e pyproject.toml ]]; then
     retval=$?
 fi
 echo "About to test retval..."
-set -o xtrace
 if [[ $retval -eq 0 ]]; then
     echo -e "\n\nDetected a PEP517-compatible project..."
     $PYTHON -m pep517.build --source .
