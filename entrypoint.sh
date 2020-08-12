@@ -67,6 +67,7 @@ printf "Prepare for publication...\n\n"
 $GIT clean -fxd
 retval=1
 if [[ -e pyproject.toml ]]; then
+    echo "Found a pyproject.toml file"
     grep "build-backend" pyproject.toml
     retval=$?
 fi
